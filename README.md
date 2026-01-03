@@ -1,7 +1,10 @@
 The main challenge in this assignment is that the indexing used for the branch history table is not exactly the PC but the result of the XOR operation applied on PC and the shift register
 
 The Branch History Register size is figured out from the observation that if
-```bpred.actual(0, True)``` is called enough time, the BHT index eventually converges to a constant value. The number of times the function needs to be invoked before the convergence happens is equal to the BHR size.
+```
+bpred.actual(0, True)
+```
+is called enough time, the BHT index eventually converges to a constant value. The number of times the function needs to be invoked before the convergence happens is equal to the BHR size.
 
 The main insight that helps with finding out the saturating counter bits is that by interleaving every actual(0, True) with BHR size times actual(_, False), the effect of the XOR disappears
 
