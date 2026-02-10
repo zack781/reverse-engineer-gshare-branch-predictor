@@ -5,6 +5,7 @@
 bpred.actual(0, True)
 ```
 is called enough time, the BHT index eventually converges to a constant value. The number of times the function needs to be invoked before the convergence happens is equal to the BHR size.
+In more details, what happens is the BHR becomes an array of 1s, which means consecutive predict() calls will predict on the same index in the BHT.
 
 3. The main insight that helps with finding out the saturating counter bits is that by interleaving every actual(0, True) with BHR size times actual(_, False), the effect of the XOR disappears
 
